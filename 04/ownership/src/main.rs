@@ -6,8 +6,6 @@ fn main() {
 
     let s1 = gives_ownership();
 
-    //
-
     /*
         s2 entra no escopo;
         s2 é movido para;
