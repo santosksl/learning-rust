@@ -20,7 +20,7 @@ fn main() {
     println!("{s3}");
 } //s3 sai do escopo entao é .drop
 //s1 sai do escopo entao é .drop
-
+//
 fn gives_ownership() -> String {
     let some_string = String::from("yours");
     some_string
