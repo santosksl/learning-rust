@@ -1,14 +1,5 @@
 use std::io;
 
-fn main() {
-    mutable();
-    tups();
-    arrays();
-
-    let test = sum(5, 5);
-    println!("O resultado da soma é: {test}");
-}
-
 fn mutable() {
     let x = 5;
     let x = x + 1;
@@ -54,4 +45,62 @@ fn arrays() {
 
 fn sum(x: i32, y: i32) -> i32 {
     x + y
+}
+
+fn loop_fn() {
+    let mut count = 0;
+
+    'counting_up: loop {
+        println!("Contador: {count}");
+        let mut remaining = 10;
+
+        loop {
+            println!("Restante: {remaining}");
+
+            if remaining == 9 {
+                break;
+            }
+
+            if count == 2 {
+                break 'counting_up;
+            }
+
+            remaining -= 1;
+        }
+
+        count += 1;
+    }
+
+    println!("Contador final: {count}");
+}
+
+fn while_fn() {
+    let a = [10, 20, 30, 40, 50];
+    let mut index = 0;
+
+    while index < 5 {
+        println!("While loop value: {}", a[index]);
+        index += 1;
+    }
+}
+
+fn for_fn() {
+    let a = [10, 20, 30, 40, 50];
+
+    for element in a {
+        println!("For loop value: {element}")
+    }
+}
+
+fn main() {
+    mutable();
+    tups();
+    arrays();
+
+    let test = sum(5, 5);
+    println!("O resultado da soma é: {test}");
+
+    loop_fn();
+    while_fn();
+    for_fn();
 }
